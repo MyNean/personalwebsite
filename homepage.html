@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Apply Imprint MT Shadow font */
+        body, button, a, div {
+            font-family: "Imprint MT Shadow", serif;
+        }
+
+        /* Video Background */
+        .me video {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover; /* Make the video cover the screen without distortion */
+            z-index: -1; /* Ensure video stays in the background */
+        }
+
+        /* Button Style */
+        .btn {
+            font-family: "Imprint MT Shadow", serif;
+            font-size: 20px;
+            width: 200px; /* Set a fixed width */
+            height: 60px; /* Set a fixed height */
+            line-height: 60px; /* Align text vertically */
+            text-align: center; /* Center text horizontally */
+            padding: 0; /* Remove extra padding */
+            border: none;
+            background-color: #e5cef6;
+            color: #b655c8;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block; /* Ensure proper alignment */
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #e9d8e1;
+        }
+
+        /* Countdown Timer Style */
+        #countdown {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff4d4d;
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons Layout */
+        .buttons1, .buttons2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .iconcontact {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        /* Clock Style */
+        .clock {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Popup Content */
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .popup-content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            /* Adjust button sizes for smaller screens */
+            .btn {
+                width: 150px;
+                height: 50px;
+                font-size: 18px;
+            }
+
+            /* Reduce font size for countdown timer */
+            #countdown {
+                font-size: 30px;
+            }
+
+            /* Make video cover the entire screen */
+            .me video {
+                height: 100vh;
+            }
+
+            /* Adjust icon size */
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Adjust clock size */
+            .clock {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Stack buttons vertically for very small screens */
+            .buttons1, .buttons2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            /* Adjust popup content */
+            .popup-content {
+                width: 90%;
+                padding: 15px;
+            }
+
+            /* Adjust icon size */
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+ <!-- Audio Player for Autoplay -->
+ <audio autoplay loop>
+    <source src="image/audiohome.m4a" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<body>
+    <div class="me">
+        <video autoplay muted loop>
+            <source src="image/homepage1.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="buttons1">
+        <!-- Change the button to link to the biodata page -->
+        <a href="biodata.html">
+            <button class="btn">Biodata</button>
+        </a>
+        <a href="education.html">
+            <button class="btn">Education</button>
+        </a>
+        <a href="skills & Experience.html">
+            <button class="btn">Skills</button>
+        </a>
+    </div>
+
+    <div class="buttons2">
+        <a href="gallery.html">
+            <button class="btn">Gallery</button>
+        </a>
+        <a href="media.html"> 
+            <button class="btn">Media</button>
+        </a>   
+    </div>
+
+    <div class="iconcontact">
+        <a href="tel:+60199542729"><img src="image/bghomepage1.png" alt="Contact Icon" class="contact-icon"></a>
+    </div>
+    <div class="clock" id="clock"></div>
+
+    <!-- Popup Content -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="close" class="close">&times;</span>
+            <div id="popup-text">Default Content</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

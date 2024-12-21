@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: url('image/mediabg.jpg');
+            background-color: #f4f4f4;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header section */
+        header {
+            background-color: #f76c6c;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: slideIn 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeInText 1.5s 0.5s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Section title styling */
+        .section-title {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f76c6c;
+            color: white;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0 0 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Media Section Wrapper */
+        .media-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 5px solid #f76c6c;
+            padding: 56px;
+            border-radius: 12px;
+            background-color: #e9d8e1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .media-section h2 {
+            color: #f76c6c;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Media container styling */
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        /* Media box styling */
+        .media-box {
+            background-color: #e9d8e1;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid #f76c6c;
+            padding: 10px;
+            text-align: center;
+            background: linear-gradient(to bottom right, #ffb6c1, #f76c6c);
+            animation: popIn 1s ease-out;
+            height: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .media-box video {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .media-box p {
+            margin-top: 10px;
+            color: #555;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Pop-in animation for media box */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+
+        /* Butterfly Button */
+        .butterfly-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: pink;
+            border: 2px solid #ff8ba0;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a3e36;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 2;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .butterfly-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .butterfly-button::before {
+            content: "🦋";
+            font-size: 2rem;
+            animation: flutter 1.5s infinite alternate;
+        }
+
+        .butterfly-label {
+            position: absolute;
+            top: -30px;
+            font-size: 0.9rem;
+            color: #4a3933;
+        }
+
+        /* Keyframes for bounce animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flutter {
+            from {
+                transform: rotate(-10deg);
+            }
+            to {
+                transform: rotate(10deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Media Section -->
+    <section id="media">
+        <div class="section-title">
+            <h1>Media</h1>
+        </div>
+
+        <!-- Media Section Wrapper -->
+        <div class="media-section">
+            <h2>My Videos</h2>
+            <div class="media-container">
+                <!-- Media Box 1 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/meagain.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 2 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/am.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 3 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/famout.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 4 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/Vvideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 5 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/hiking.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 6 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/memimi.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 7 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/dad.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 8 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/school.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 9 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/me.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Media Box 10 -->
+                <div class="media-box">
+                    <video autoplay muted loop>
+                        <source src="image/modeling.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                </div>
+                    <!-- Media Box 11 -->
+                    <div class="media-box">
+                        <video autoplay muted loop>
+                            <source src="image/love.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+    
+                    <!-- Media Box 12 -->
+                    <div class="media-box">
+                        <video autoplay muted loop>
+                            <source src="image/out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Butterfly Button -->
+    <a href="homepage.html" class="butterfly-button">
+        <span class="butterfly-label">Click Me!</span>
+    </a>
+
+    <footer>
+        <p>&copy; MyNEAN. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+

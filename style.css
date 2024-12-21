@@ -1,0 +1,341 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Imprint MT Shadow;
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Stack sections vertically */
+}
+
+/* HOMEPAGE */
+.gallery {
+    text-align: center;
+    color: blueviolet;
+    background-color: beige;
+}
+
+.gallery2 {
+    color: aquamarine;
+    text-align: right;
+    font-family: 'Imprint MT Shadow', sans-serif;
+}
+
+.me video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the whole screen */
+}
+
+.buttons1, .buttons2 {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.buttons1 {
+    left: 2%;
+}
+
+.buttons2 {
+    right: 2%;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 20px;
+    color: #a47786;
+    font-size: 25px;
+    padding: 50px 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background: #a47786;
+    transform: translateY(-5px); /* Move slightly up on hover */
+}
+
+.iconcontact {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.iconcontact img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.clock {
+    font-size: 2rem;
+    color: #333;
+    position: fixed;
+    bottom: 25px;
+    left: 2cm;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.iconcontact:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.iconcontact:hover img {
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+}
+
+.popup-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes popupAnim {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Education Section */
+#education {
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background-image: url('image/Bows wallpaper.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    font-family: 'Lora', serif;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.education-item {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffe4e1;
+    border: 3px solid #ff69b4;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 500px;
+    position: relative;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 10px;
+    background-color: #ff69b4;
+    border-radius: 0 0 15px 15px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+
+    .buttons1, .buttons2 {
+        top: 5%;
+        left: 5%;
+        right: 5%;
+        width: auto;
+    }
+
+    .btn {
+        font-size: 20px;
+        padding: 35px 25px;
+    }
+
+    .iconcontact {
+        width: 120px;
+        height: 120px;
+    }
+
+    .clock {
+        font-size: 1.5rem;
+        left: 1cm;
+    }
+}
+
+/* Butterfly Button */
+.butterfly-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background: pink;
+    border: 2px solid #ff8ba0;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #5a3e36;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.butterfly-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.butterfly-button::before {
+    content: "🦋";
+    font-size: 2rem;
+    animation: flutter 1.5s infinite alternate;
+}
+
+.butterfly-label {
+    position: absolute;
+    top: -30px;
+    font-size: 0.9rem;
+    color: #4a3933;
+}
+
+@keyframes flutter {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.skills-section ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 120px;
+    height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.skills-section ul li .icon-box {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7bec0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section ul li .icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skills-section ul li:hover {
+    background: #ffdfdf;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .skills-section ul li {
+        width: 80px; /* Reduce size of items on mobile */
+        height: 100px;
+    }
+}

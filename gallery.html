@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('image/gallerybg.jpg');
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f76c6c;
+            color: white;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Gallery Container */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-box {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.25
+            s ease, box-shadow 0.3s ease;
+            overflow :hidden;
+        }
+
+        .gallery-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 9px;
+        }
+
+        .gallery-box p {
+            margin-top: 10px;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* Media Section Styling */
+        .media-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 5px solid #f76c6c;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-section h2 {
+            color: #f76c6c;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .media-frame {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background-color:#fcb5ac;
+            padding: 20px;
+            border: 2px solid #f76c6c;
+            border-radius: 10px;
+        }
+
+        /* Adjusted width for seamless scrolling */
+        .media-wrapper {
+            display: flex;
+            animation: scroll 60s linear infinite;
+            width: max-content; /* Ensures the width of the wrapper is enough for all images */
+        }
+
+        /* Animation for continuous scrolling */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Scroll the content completely */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-box {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-box {
+                width: 200px;
+                height: 120px;
+            }
+        }
+        footer {
+            position: fixed;
+            bottom: 0%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+         /* Butterfly Button */
+         .butterfly-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: pink;
+            border: 2px solid #ff8ba0;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a3e36;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 2;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .butterfly-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .butterfly-button::before {
+            content: "🦋";
+            font-size: 2rem;
+            animation: flutter 1.5s infinite alternate;
+        }
+
+        .butterfly-label {
+            position: absolute;
+            top: -30px;
+            font-size: 0.9rem;
+            color: #4a3933;
+        }
+
+        /* Keyframes for bounce animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flutter {
+            from {
+                transform: rotate(-10deg);
+            }
+            to {
+                transform: rotate(10deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Audio Player for Autoplay -->
+    <audio autoplay loop>
+        <source src="image/audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-title">
+            <h1>Gallery</h1>
+        </div>
+
+        <!-- Gallery Container -->
+        <div class="media-section">
+            
+            <div class="media-frame">
+                <div class="media-wrapper">
+                    <!-- Family Gallery Boxes -->
+                    <div class="gallery-box">
+                        <img src="image/family.jpg" alt="Family Photo 1">
+                        <p>Family 1</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/me12.jpg" alt="Family Photo 2">
+                        <p>Family 2</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/me11.jpg" alt="Family Photo 3">
+                        <p>Family 3</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/family2.jpg" alt="Family Photo 4">
+                        <p>Family 4</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/fam.jpg" alt="Family Photo 5">
+                        <p>Family 5</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/family.jpg" alt="Family Photo 6">
+                        <p>Family 6</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/myself.jpg" alt="Family Photo 7">
+                        <p>Family 7</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery6.jpg" alt="Family Photo 8">
+                        <p>Family 8</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/myself2.jpg" alt="Family Photo 9">
+                        <p>Family 9</p>
+                    </div>
+                    <div class="gallery-box">
+                        
+                         <img src="image/yeheyhey.jpg" alt="Family Photo 10">
+                        <p>Family 10</p>
+                    </div>
+                    <!-- Add 10 more family boxes -->
+                    <div class="gallery-box">
+                        <img src="image/me12.jpg" alt="Family Photo 11">
+                        <p>Family 11</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/me14.jpg" alt="Family Photo 12">
+                        <p>Family 12</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/mimi.jpg" alt="Family Photo 13">
+                        <p>Family 13</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya6.jpg" alt="Family Photo 14">
+                        <p>Family 14</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya11.jpg" alt="Family Photo 15">
+                        <p>Family 15</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya7.jpg" alt="Family Photo 16">
+                        <p>Family 16</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya9.jpg" alt="Family Photo 17">
+                        <p>Family 17</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya10.jpg" alt="Family Photo 18">
+                        <p>Family 18</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya5.jpg" alt="Family Photo 19">
+                        <p>Family 19</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya4.jpg" alt="Family Photo 20">
+                        <p>Family 20</p>
+                    </div>
+                </div>
+            </div>
+
+    
+            <div class="media-frame">
+                <div class="media-wrapper">
+                    <!-- Friends Gallery Boxes -->
+                    <div class="gallery-box">
+                        <img src="image/me14.jpg" alt="Friend Photo 1">
+                        <p>Friend 1</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/friend2.jpg" alt="Friend Photo 2">
+                        <p>Friend 2</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/me12.jpg" alt="Friend Photo 3">
+                        <p>Friend 3</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery 7.jpg" alt="Friend Photo 4">
+                        <p>Friend 4</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery1.jpg" alt="Friend Photo 5">
+                        <p>Friend 5</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery10.jpg" alt="Friend Photo 6">
+                        <p>Friend 6</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery11.jpg" alt="Friend Photo 7">
+                        <p>Friend 7</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery12.jpg" alt="Friend Photo 8">
+                        <p>Friend 8</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery3.jpg" alt="Friend Photo 9">
+                        <p>Friend 9</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/gallery9.jpg" alt="Friend Photo 10">
+                        <p>Friend 10</p>
+                    </div>
+                    <!-- Add 10 more friends boxes -->
+                    <div class="gallery-box">
+                        <img src="image/abaya8.jpg" alt="Friend Photo 11">
+                        <p>Friend 11</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/friend 3.jpg" alt="Friend Photo 12">
+                        <p>Friend 12</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya3.jpg" alt="Friend Photo 13">
+                        <p>Friend 13</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/iz.jpg" alt="Friend Photo 14">
+                        <p>Friend 14</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/mimi2.jpg" alt="Friend Photo 15">
+                        <p>Friend 15</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/friend1.jpg" alt="Friend Photo 16">
+                        <p>Friend 16</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya1.jpg" alt="Friend Photo 17">
+                        <p>Friend 17</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/friend 6.jpg" alt="Friend Photo 18">
+                        <p>Friend 18</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/abaya.jpg" alt="Friend Photo 19">
+                        <p>Friend 19</p>
+                    </div>
+                    <div class="gallery-box">
+                        <img src="image/friend2.jpg" alt="Friend Photo 20">
+                        <p>Friend 20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; MyNEAN. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Butterfly Button -->
+  <a href="homepage.html" class="butterfly-button">
+        <span class="butterfly-label">Click Me!</span>
+    </a>
+    
+</body>
+</html>

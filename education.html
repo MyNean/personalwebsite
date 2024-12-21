@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Education Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Imprint MT Shadow', serif;
+            background: url('image/Bows wallpaper.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #education {
+            width: 100%;
+            padding: 3rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            padding: 20px;
+            margin: 0 auto 30px;
+            color: #f76c6c;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 3px solid #f76c6c;
+            display: inline-block;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f76c6c;
+            border-radius: 10px;
+            text-align: center;
+            padding: 30px;
+            max-width: 300px;
+            animation: popUp 1.5s ease-in-out;
+        }
+
+        @keyframes popUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .card-image {
+            max-width: 150px;
+            display: block;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .card-image:hover {
+            transform: scale(1.1);
+        }
+
+        .card h2 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: white;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        /* Butterfly Button */
+        .butterfly-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: pink;
+            border: 2px solid #ff8ba0;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a3e36;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 2;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .butterfly-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .butterfly-button::before {
+            content: "🦋";
+            font-size: 2rem;
+            animation: flutter 1.5s infinite alternate;
+        }
+
+        .butterfly-label {
+            position: absolute;
+            top: -30px;
+            font-size: 0.9rem;
+            color: #4a3933;
+        }
+
+        /* Keyframes for bounce animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes flutter {
+            from {
+                transform: rotate(-10deg);
+            }
+            to {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .card {
+                max-width: 90%;
+                padding: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.5rem;
+            }
+
+            .card-description {
+                font-size: 0.9rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            .butterfly-button {
+                width: 70px;
+                height: 70px;
+            }
+
+            .butterfly-button::before {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .card h2 {
+                font-size: 1.3rem;
+            }
+
+            .card-description {
+                font-size: 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            .butterfly-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .butterfly-button::before {
+                font-size: 1.2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section id="education">
+        <div class="section-title">
+            <h1>Education</h1>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <h2>SMK Tan Sri Mohammad Yaacob</h2>
+                <img src="image/school.jpg" alt="School" class="card-image">
+                <p class="card-description">Secondary School</p>
+            </div>
+            <div class="card">
+                <h2>Diploma in Information Management</h2>
+                <img src="image/school2.jpg" alt="Diploma" class="card-image">
+                <p class="card-description">Universiti Teknologi MARA (UiTM) | Cawangan Kelantan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Butterfly Button -->
+    <a href="homepage.html" class="butterfly-button">
+        <span class="butterfly-label">Click Me!</span>
+    </a>
+
+    <footer>
+        <p>&copy; MyNEAN. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <script src="scripts.js"></script>
+</head>
+
+    <style>
+       body {
+            font-family: 'Poppins', Imprint MT Shadow;
+            margin: 0;
+            padding: 0;
+            background: url('image/biodatabg.jpg') no-repeat center center fixed, 
+                        linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+            background-size: cover;
+            overflow: hidden;
+            color: #391306;
+            position: relative;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #7b3f00;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .profile-pic {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 5px solid #ffb6c1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .info {
+            line-height: 1.8;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .info label {
+            font-weight: bold;
+        }
+
+        /*email link styling*/
+        a{
+            text-decoration: none;
+            color: #391306;
+            font-weight: 600;
+        }
+        a:hover{
+            color: #ee9ca7;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #5a3e36;
+        }
+
+        /* Decorative Floating Circles */
+        .circle {
+            position: absolute;
+            border-radius: 80%;
+            background: rgba(198, 72, 91, 0.5);
+            animation: float 8s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        .circle.small {
+            width: 50px;
+            height: 40px;
+        }
+
+        .circle.medium {
+            width: 50px;
+            height: 60px;
+        }
+
+        .circle.large {
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-duration: 6s;
+        }
+
+        .circle:nth-child(2) {
+            bottom: 30%;
+            right: 15%;
+            animation-duration: 7s;
+        }
+
+        .circle:nth-child(3) {
+            top: 50%;
+            left: 40%;
+            animation-duration: 8s;
+        }
+
+        .circle:nth-child(4) {
+            bottom: 10%;
+            right: 40%;
+            animation-duration: 9s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Butterfly Button */
+        .butterfly-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: pink;
+            border: 2px solid #ff8ba0;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a3e36;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 2;
+        }
+
+        .butterfly-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .butterfly-button::before {
+            content: "🦋";
+            font-size: 2rem;
+            animation: flutter 1.5s infinite alternate;
+        }
+
+        .butterfly-label {
+            position: absolute;
+            top: -30px;
+            font-size: 0.9rem;
+            color: #4a3933;
+        }
+
+        @keyframes flutter {
+            from {
+                transform: rotate(-10deg);
+            }
+            to {
+                transform: rotate(10deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            .info p {
+                font-size: 1rem;
+            }
+
+            .butterfly-button {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                max-width: 100%;
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            .info p {
+                font-size: 0.9rem;
+            }
+
+            .butterfly-button {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="circle small circle-1"></div>
+    <div class="circle medium circle-2"></div>
+    <div class="circle large circle-3"></div>
+    <div class="circle medium circle-4"></div>
+
+    <div class="container">
+        <h1>Biodata</h1>
+        <img src="image/eyya.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="info">
+            <p><label>Name:</label> Nur Ellyia Amiza Natasha Binti Che Rahim</p>
+            <p><label>Date of Birth:</label> August 30, 2004</p>
+            <p><label>Address:</label> Tanah Merah 17510, Kelantan</p>
+            <p><label>Hobbies:</label> Reading, Hunting Food, Kdrama Lover</p >
+            <p><label>Phone:</label> +6019-9542729</p>
+        </div>
+        <div class="info">
+            <p><span>Email : </span><a href="mailto:nellyianatasha@gmail.com">nellyianatasha@gmail.com</a></p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        &copy; MyNEAN. All rights reserved.
+    </div>
+
+    <!-- Butterfly Button -->
+    <a href="homepage.html" class="butterfly-button">
+        <span class="butterfly-label">Click Me!</span>
+    </a>
+</body>
+</html>
